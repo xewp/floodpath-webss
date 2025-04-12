@@ -1,0 +1,57 @@
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2a4153, #162631); /* Dark blue/teal gradient */
+  background-image: url('path/to/your/background-image.jpg'); /* Optional background image */
+  background-size: cover;
+}
+
+.login-card {
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly less transparent */
+  backdrop-filter: blur(8px); /* Slightly more blur */
+  padding: 2rem; /* Reduced padding */
+  border-radius: 0.8rem; /* Slightly smaller radius */
+  width: 90%; /* Make it smaller relative to the viewport */
+  max-width: 350px; /* Reduce max-width for smaller size */
+  text-align: center;
+  color: white;
+}
+
+.login-title {
+  font-size: 1.5rem; /* Smaller title */
+  margin-bottom: 1.2rem; /* Reduced margin */
+}
+
+.login-input {
+  display: block;
+  width: 100%;
+  padding: 0.6rem; /* Slightly smaller padding */
+  margin-bottom: 0.8rem; /* Reduced margin */
+  border: none;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly more transparent input */
+  color: black;
+  font-weight: 500;
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.5rem; /* Smaller padding */
+  border: none;
+  border-radius: 9999px;
+  background-color: #1a2c3a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+.login-support {
+  margin-top: 0.8rem; /* Reduced margin */
+  font-size: 0.75rem; /* Smaller font size */
+  color: #8bbef0;
+  cursor: pointer;
+}

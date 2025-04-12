@@ -1,0 +1,22 @@
+/* src/styles/main.css */
+:root {
+    --primary-color: #4a6cf7;
+    --primary-hover: #3a5ce4;
+    --text-color: #333;
+    --light-text: #666;
+    --border-color: #ddd;
+    --background-light: #f5f5f5;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-light);
+  }
