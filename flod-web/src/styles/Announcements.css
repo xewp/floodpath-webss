@@ -1,0 +1,92 @@
+.announcements-page {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Top row spanning each box */
+#weather-heatmap-box {
+  grid-column: span 1;
+}
+#evacuation-capacity-box {
+  grid-column: span 1;
+}
+#latest-news-box {
+  grid-column: span 1;
+}
+
+/* Bottom row, larger width */
+#barangays-list-box {
+  grid-column: span 2;
+}
+#announcements-list-box {
+  grid-column: span 1;
+}
+
+.announcement-box {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.box-header {
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.box-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.box-controls input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 180px;
+}
+
+.box-controls button {
+  padding: 8px 14px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.box-content {
+  flex: 1;
+  padding: 20px;
+  min-height: 180px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .announcements-page {
+    grid-template-columns: 1fr;
+  }
+
+  #barangays-list-box,
+  #announcements-list-box,
+  #weather-heatmap-box,
+  #evacuation-capacity-box,
+  #latest-news-box {
+    grid-column: span 1;
+  }
+}

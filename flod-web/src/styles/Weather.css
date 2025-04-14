@@ -1,0 +1,125 @@
+/* src/styles/WeatherRainfall.css */
+.weather-page {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Weather Stats Row */
+.weather-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.weather-stat-box {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.empty-value,
+.empty-change {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.empty-value {
+  height: 24px;
+  width: 80%;
+  margin-bottom: 6px;
+}
+
+.empty-change {
+  height: 16px;
+  width: 50%;
+}
+
+/* Content Boxes */
+.weather-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.content-box {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Raindrop Track */
+.empty-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empty-option {
+  height: 20px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  width: 60%;
+}
+
+/* Predictive Analytics */
+.empty-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.empty-grid-item {
+  height: 30px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+/* Change of Rain */
+.empty-rain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.empty-times,
+.empty-percentages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empty-time,
+.empty-percent {
+  height: 24px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .weather-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .weather-content-grid {
+    grid-template-columns: 1fr;
+  }
+}

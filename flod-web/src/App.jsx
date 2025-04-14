@@ -1,7 +1,7 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminLanding from './pages/AdminLanding/AdminLanding';
-import DashboardPage from './pages/Dashboard';
+import DashboardPage from './pages/DashboardLayout';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AdminLanding />} />
         <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/" element={<Navigate to="/" />} />
+        {/* Remove the redundant redirect route */}
       </Routes>
     </Router>
   );

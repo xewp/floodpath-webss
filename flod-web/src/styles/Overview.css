@@ -1,0 +1,94 @@
+/* src/styles/Overview.css */
+.overview-container {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .overview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .overview-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    color: #333;
+  }
+  
+  .date-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Add this to center content horizontally */
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative; /* Add this for absolute positioning of the arrow */
+    width: 120px; /* Set a fixed width for better centering */
+  }
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .dashboard-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .dashboard-card.wide {
+    grid-column: span 2;
+  }
+  
+  .dashboard-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    color: #666;
+  }
+  
+  .card-content {
+    flex: 1;
+    min-height: 100px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .dashboard-card.wide {
+      grid-column: span 2;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .dashboard-card.wide {
+      grid-column: span 2;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .dashboard-card.wide {
+      grid-column: span 1;
+    }
+  }
