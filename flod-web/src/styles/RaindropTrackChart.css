@@ -1,0 +1,56 @@
+/* src/components/Charts/RaindropTrackChart.css */
+.raindrop-track-chart {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .chart-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .chart-legend {
+    display: flex;
+    align-items: center;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    font-size: 10px;
+    color: #6B7280;
+  }
+  
+  .legend-marker {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  
+  .legend-marker.all {
+    background-color: #333333;
+  }
+  
+  .legend-marker.snowui {
+    background-color: #9CA3AF;
+  }
+  
+  .legend-marker.dashboard {
+    background-color: #E3342F;
+  }
+  
+  .chart-container {
+    flex-grow: 1;
+  }

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/Users.css';
+import MajorityUserChart from '../../components/Charts/MajorityUserChart';
 
 const Users = () => {
   return (
@@ -7,12 +8,10 @@ const Users = () => {
       {/* First Row - Three Boxes */}
       <div className="users-row">
         {/* Majority User Box */}
-        <div className="users-box" id="majority-user-box">
-          <div className="box-header">
-            <h3>Majority User</h3>
-          </div>
-          <div className="box-content">
-            {/* Content will go here */}
+        <div className="dashboard-card wide">
+          <h3>Majority User</h3>
+          <div className="card-content h-64">
+            <MajorityUserChart />
           </div>
         </div>
 

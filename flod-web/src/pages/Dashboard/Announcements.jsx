@@ -1,5 +1,8 @@
 import React from 'react';
 import '../../styles/Announcements.css';
+import EvacuationCapacityChart from '../../components/Charts/EvacuationChart';
+
+// Changed from EvacChart to EvacuationChart
 
 const Announcements = () => {
   return (
@@ -15,8 +18,11 @@ const Announcements = () => {
       <div className="announcement-box" id="evacuation-capacity-box">
         <div className="box-header">
           <h3>Evacuations Capacity</h3>
+          <EvacuationCapacityChart />
         </div>
-        <div className="box-content" />
+        <div className="box-content">
+          
+        </div>
       </div>
 
       <div className="announcement-box" id="latest-news-box">

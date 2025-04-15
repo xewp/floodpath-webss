@@ -1,6 +1,12 @@
 // src/pages/Dashboard/WeatherRainfall.jsx
 import React from 'react';
 import '../../styles/Weather.css';
+import WeatherRainfallChart from '../../components/Charts/WeatherRainfallChart';
+import ApiChart from '../../components/Charts/ApiChart'; // Import the new component
+import ChanceOfRainChart from '../../components/Charts/ChanceOfRainChart';
+import RaindropTrackChart from '../../components/Charts/RaindropTrackChart';
+
+
 
 const WeatherRainfall = () => {
   return (
@@ -29,42 +35,34 @@ const WeatherRainfall = () => {
         </div>
       </div>
 
-      {/* Main Content Sections - Labels Only */}
+      {/* Main Content Sections */}
       <div className="weather-content-grid">
+        {/* API Chart - NEW */}
+        <div className="content-box api-box">
+          <ApiChart />
+        </div>
+        
+        {/* Change of Rain */}
+         <div className="content-box">
+          
+          <div className="rain-chance-container h-64"> {/* Fixed height */}
+            <ChanceOfRainChart />
+          </div>
+        </div>
+
         {/* Raindrop Track */}
         <div className="content-box">
           <h3 className="section-title">Raindrop Track</h3>
-          <div className="empty-options">
-            <div className="empty-option"></div>
-            <div className="empty-option"></div>
-            <div className="empty-option"></div>
+          <div className="raindrop-container h-64">
+            <RaindropTrackChart />
           </div>
         </div>
 
         {/* Predictive Analytics */}
         <div className="content-box">
           <h3 className="section-title">Weather and Rainfall Predictive Analytics</h3>
-          <div className="empty-analytics-grid">
-            {[...Array(11)].map((_, i) => (
-              <div key={i} className="empty-grid-item"></div>
-            ))}
-          </div>
-        </div>
-
-        {/* Change of Rain */}
-        <div className="content-box">
-          <h3 className="section-title">Change of rain</h3>
-          <div className="empty-rain-grid">
-            <div className="empty-times">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="empty-time"></div>
-              ))}
-            </div>
-            <div className="empty-percentages">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="empty-percent"></div>
-              ))}
-            </div>
+          <div className="analytics-chart-container h-64"> {/* Fixed height */}
+            <WeatherRainfallChart />
           </div>
         </div>
       </div>

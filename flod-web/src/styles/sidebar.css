@@ -15,6 +15,12 @@
   padding: 15px;
   border-bottom: 1px solid #e0e0e0;
   text-align: center;
+  background: linear-gradient(to right, #62B8C7, #185C7C, #003165, #151722);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2em; /* Adjust as needed */
+  font-weight: bold; /* Adjust as needed */
+  /* Add other text styling properties as needed to match the image */
 }
 
 .logo h3 {

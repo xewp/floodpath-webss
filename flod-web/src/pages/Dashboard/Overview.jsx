@@ -1,6 +1,11 @@
 // src/pages/Overview.jsx
 import React from 'react';
 import '../../styles/Overview.css';
+// src/pages/Dashboard/Overview.jsx
+import EvacuationChart from '../../components/Charts/EvacuationChart';
+import MajorityUserChart from '../../components/Charts/MajorityUserChart';
+
+
 
 const Overview = () => {
   return (
@@ -35,23 +40,27 @@ const Overview = () => {
           <div className="card-content"></div>
         </div>
         
-        {/* Box 5 (Wide) */}
-        <div className="dashboard-card wide">
-          <h3>Majority User</h3>
-          <div className="card-content"></div>
-        </div>
-        
-        {/* Box 6 (Wide) */}
-        <div className="dashboard-card wide">
-          <h3>Map</h3>
-          <div className="card-content"></div>
-        </div>
-        
-        {/* Box 7 */}
-        <div className="dashboard-card">
-          <h3>Area Alert Level</h3>
-          <div className="card-content"></div>
-        </div>
+       {/* Box 5 (Wide) */}
+<div className="dashboard-card wide">
+  <h3>Majority User</h3>
+  <div className="card-content h-64">
+    <MajorityUserChart />
+  </div>
+</div>
+
+{/* Box 6 (Wide) */}
+<div className="dashboard-card wide">
+  <h3>Map</h3>
+  <div className="card-content"></div>
+</div>
+
+{/* Box 7 - Area Alert Level */}
+<div className="dashboard-card area-alert">
+  <h3>Area Alert Level</h3>
+  <div className="card-content"></div>
+</div>
+
+
         
         {/* Box 8 */}
         <div className="dashboard-card">
@@ -61,9 +70,11 @@ const Overview = () => {
         
         {/* Box 9 (Wide) */}
         <div className="dashboard-card wide">
-          <h3>Evacuations Capacity</h3>
-          <div className="card-content"></div>
+        <h3>Evacuations Capacity</h3>
+        <div className="card-content">
+          <EvacuationChart />
         </div>
+      </div>
         
         {/* Box 10 */}
         <div className="dashboard-card">

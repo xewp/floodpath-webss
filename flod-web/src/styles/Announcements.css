@@ -1,23 +1,20 @@
 .announcements-page {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
   grid-template-rows: auto auto;
   gap: 20px;
   padding: 20px;
 }
 
-/* Top row spanning each box */
-#weather-heatmap-box {
-  grid-column: span 1;
-}
-#evacuation-capacity-box {
-  grid-column: span 1;
-}
+/* Top row - all three boxes equal size */
+#weather-heatmap-box,
+#evacuation-capacity-box,
 #latest-news-box {
   grid-column: span 1;
+  height: 200px; /* Fixed height to match image */
 }
 
-/* Bottom row, larger width */
+/* Bottom row */
 #barangays-list-box {
   grid-column: span 2;
 }
@@ -32,6 +29,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 100%; /* Ensure boxes take full height of their container */
 }
 
 .box-header {
@@ -73,7 +71,7 @@
 .box-content {
   flex: 1;
   padding: 20px;
-  min-height: 180px;
+  min-height: 0; /* Changed from min-height: 180px to allow proper flex distribution */
 }
 
 /* Responsive tweaks */
@@ -82,11 +80,12 @@
     grid-template-columns: 1fr;
   }
 
-  #barangays-list-box,
-  #announcements-list-box,
   #weather-heatmap-box,
   #evacuation-capacity-box,
-  #latest-news-box {
+  #latest-news-box,
+  #barangays-list-box,
+  #announcements-list-box {
     grid-column: span 1;
+    height: auto; /* Reset height on mobile */
   }
 }

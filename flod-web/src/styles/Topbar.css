@@ -4,11 +4,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
-  background-color: #ffffff;
+  /* Changed background-color to a gradient from bottom to top */
+  background: linear-gradient(to top, #4D606E 0%, #03243D 100%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 100;
+  color: white; /* Ensure text is visible on the dark background */
 }
 
 .logo {
@@ -24,11 +26,12 @@
 
 .user-type {
   font-size: 14px;
-  color: #555;
+  color: #ddd; /* Adjusted text color for better visibility */
   text-transform: capitalize;
   padding: 5px 10px;
   border-radius: 4px;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add a subtle border */
 }
 
 .user-type.clickable {
@@ -36,8 +39,8 @@
 }
 
 .user-type.clickable:hover {
-  background-color: #f0f0f0;
-  color: #03243D;
+  background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
+  color: white;
   transform: translateY(-1px);
 }
 

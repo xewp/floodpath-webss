@@ -1,5 +1,8 @@
 import React from 'react';
 import '../../styles/AlertPanel.css';
+import EvacuationCapacityChart from '../../components/Charts/EvacuationChart';
+
+
 
 const AlertPanel = () => {
   return (
@@ -30,7 +33,7 @@ const AlertPanel = () => {
           <h3>Evacuations Capacity</h3>
         </div>
         <div className="box-content">
-          {/* Content Placeholder */}
+        <EvacuationCapacityChart />
         </div>
       </div>
 

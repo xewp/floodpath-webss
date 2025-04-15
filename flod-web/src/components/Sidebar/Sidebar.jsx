@@ -5,9 +5,7 @@ import '../../styles/Sidebar.css';
 const Sidebar = ({ activeItem, onItemClick }) => {
   return (
     <nav className="sidebar">
-      <div className="logo">
-        <h3>FloodPath</h3>
-      </div>
+     <div class="logo">FloodPath</div>
 
       <div className="nav-section">
         <div className="section-title">Dashboard</div>
