@@ -1,11 +1,13 @@
 import React from 'react';
 import TopBar from '../../components/Topbar/Topbar';
 import landingPageContent from './landingpage-content';
-import '../../styles/UserLanding.css';
+import '../../styles/UserLanding.css'; // Updated CSS import
 import googlePlayBadge from '../../assets/googl.png';
+// Note: You'll need to provide your actual map image
 import mapImage from '../../assets/qwe.png';
 
-const UserLanding = () => {
+const UserLandingPage = () => { // Renamed component
+  // Extract sections from landingPageContent
   const emergencyContacts = landingPageContent.sections.find(
     section => section.title === "Near Emergency Authorities Contacts"
   );
@@ -15,39 +17,37 @@ const UserLanding = () => {
   );
 
   return (
-    <div className="user-landing-container">
+    <div className="ulp-user-landing-container">
       <TopBar userType="user" />
 
-      <div className="floodpath-container">
+      <div className="ulp-floodpath-container">
         {/* Main Content */}
-        <div className="main-content">
+        <div className="ulp-main-content">
           {/* Map Section */}
-          <div className="map-section">
-            <div className="map-container">
-              <img src={mapImage} alt="Marikina City Map" className="map-image" />
-              
+          <div className="ulp-map-section">
+            <div className="ulp-map-container">
+              <img src={mapImage} alt="Marikina City Map" className="ulp-map-image" />
               {/* Map Controls */}
-              <div className="map-controls">
-                <button className="map-control-btn zoom-in">+</button>
-                <button className="map-control-btn zoom-out">−</button>
+              <div className="ulp-map-controls">
+                <button className="ulp-map-control-btn">+</button>
+                <button className="ulp-map-control-btn">−</button>
               </div>
-
               {/* Map Legend */}
-              <div className="map-legend">
-                <div className="legend-item">
-                  <div className="legend-color high-risk"></div>
+              <div className="ulp-map-legend">
+                <div className="ulp-legend-item">
+                  <div className="ulp-legend-color ulp-legend-color-high-risk"></div>
                   <span>High Risk</span>
                 </div>
-                <div className="legend-item">
-                  <div className="legend-color medium-risk"></div>
+                <div className="ulp-legend-item">
+                  <div className="ulp-legend-color ulp-legend-color-medium-risk"></div>
                   <span>Medium Risk</span>
                 </div>
-                <div className="legend-item">
-                  <div className="legend-color low-risk"></div>
+                <div className="ulp-legend-item">
+                  <div className="ulp-legend-color ulp-legend-color-low-risk"></div>
                   <span>Low Risk</span>
                 </div>
-                <div className="legend-item">
-                  <div className="legend-color safe"></div>
+                <div className="ulp-legend-item">
+                  <div className="ulp-legend-color ulp-legend-color-safe"></div>
                   <span>Safe</span>
                 </div>
               </div>
@@ -55,31 +55,29 @@ const UserLanding = () => {
           </div>
 
           {/* Emergency Info Section */}
-          <div className="emergency-info-section">
+          <div className="ulp-emergency-info-section">
             {/* Near Emergency Authorities */}
-            <div className="emergency-block">
+            <div className="ulp-emergency-block">
               <h2>{emergencyContacts.title}</h2>
-              <div className="contact-info">
+              <div className="ulp-contact-info">
                 {emergencyContacts.items.map((item, index) => (
-                  <div key={index} className="contact-item">
-                    <div className="contact-icon">📍</div>
-                    <p>{item}</p>
-                  </div>
+                  <p key={index}>{item}</p>
                 ))}
               </div>
             </div>
 
             {/* Other Emergency Hotlines */}
-            <div className="emergency-block hotlines-block">
+            <div className="ulp-emergency-block">
               <h2>{hotlines.title}</h2>
-              <div className="hotline-columns">
+
+              <div className="ulp-hotline-columns">
                 {hotlines.groups.map((group, groupIndex) => (
-                  <div key={groupIndex} className="hotline-column">
+                  <div key={groupIndex} className="ulp-hotline-column">
                     <h3>{group.title}</h3>
-                    <ul className="hotline-list">
+                    <ul className="ulp-hotline-list">
                       {group.items.map((item, itemIndex) => (
                         <li key={itemIndex}>
-                          <span className="phone-icon">📞</span> {item}
+                          <span className="ulp-phone-icon">📞</span> {item}
                         </li>
                       ))}
                     </ul>
@@ -89,25 +87,23 @@ const UserLanding = () => {
             </div>
 
             {/* Google Play Button */}
-            <div className="google-play-section">
-              <p>Download our mobile app for more features</p>
-              <img src={googlePlayBadge} alt="Get it on Google Play" className="google-play-badge" />
+            <div className="ulp-google-play-section">
+              <p>Download our app on Google Play:</p>
+              <img src={googlePlayBadge} alt="Get it on Google Play" className="ulp-google-play-badge" />
             </div>
           </div>
         </div>
 
         {/* Footer */}
-        <div className="footer">
-          <div className="footer-content">
-            <span className="contact-us">CONTACT US</span>
-            <div className="social-icons">
-              <a href="#" className="social-icon">🐦</a>
-              <a href="#" className="social-icon">📱</a>
-              <a href="#" className="social-icon">✉️</a>
+        <div className="ulp-footer">
+          <div className="ulp-footer-content">
+            <span className="ulp-contact-us">CONTACT US</span>
+            <div className="ulp-social-icons">
+              <span className="ulp-social-icon">🐦</span>
+              <span className="ulp-social-icon">📱</span>
+              <span className="ulp-social-icon">✉️</span>
             </div>
-            <div className="footer-text">
-              <p>© 2023 FloodPath Marikina. All rights reserved.</p>
-            </div>
+            <p className="ulp-footer-text">&copy; 2025 FloodPath. All rights reserved.</p>
           </div>
         </div>
       </div>
@@ -115,4 +111,4 @@ const UserLanding = () => {
   );
 };
 
-export default UserLanding;
+export default UserLandingPage;

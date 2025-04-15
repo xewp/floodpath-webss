@@ -1,109 +1,184 @@
 /* src/styles/Users.css */
 
 .users-container {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.users-row {
+  display: flex;
+  gap: 20px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.users-box {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  flex: 1;
+  min-width: 0;
+  transition: all 0.3s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.users-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific box styles */
+#majority-user-box {
+  flex: 1.5;
+  transition: all 0.4s ease;
+}
+
+#user-heatmap-box {
+  flex: 1.5;
+  transition: all 0.4s ease;
+}
+
+#new-users-box {
+  flex: 1;
+}
+
+#all-users-box {
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.box-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.3s ease;
+}
+
+.box-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.table-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.search-control {
+  display: flex;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.search-control input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s ease, box-shadow 0.2s ease;
+}
+
+.search-control input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  outline: none;
+}
+
+.search-control button {
+  padding: 8px 15px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease, transform 0.1s ease;
+}
+
+.search-control button:hover {
+  background-color: #3a7bc8;
+  transform: translateY(-1px);
+}
+
+.search-control button:active {
+  transform: translateY(0);
+}
+
+.sort-control select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.sort-control select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  outline: none;
+}
+
+.box-content {
+  min-height: 200px;
+  transition: all 0.4s ease;
+}
+
+.table-placeholder {
+  width: 100%;
+  height: 400px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  transition: all 0.4s ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.8; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .users-row {
-    display: flex;
-    gap: 20px;
+      flex-direction: column;
+      gap: 15px;
   }
   
-  .users-box {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    flex: 1;
-    min-width: 0; /* Prevents flex items from overflowing */
-  }
-  
-  /* Specific box styles if needed */
-  #majority-user-box {
-    flex: 1.5; /* Slightly larger if needed */
-  }
-  
+  #majority-user-box,
   #user-heatmap-box {
-    flex: 1.5; /* Slightly larger if needed */
-  }
-  
-  #new-users-box {
-    flex: 1;
-  }
-  
-  #all-users-box {
-    width: 100%;
-  }
-  
-  .box-header {
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .box-header h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
+      flex: 1;
   }
   
   .table-controls {
-    display: flex;
-    gap: 15px;
-    align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
   }
   
   .search-control {
-    display: flex;
-    gap: 8px;
+      width: 100%;
   }
   
   .search-control input {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+      flex-grow: 1;
   }
-  
-  .search-control button {
-    padding: 8px 15px;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .search-control button:hover {
-    background-color: #3a7bc8;
-  }
-  
-  .sort-control select {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    background-color: white;
-  }
-  
-  .box-content {
-    min-height: 200px;
-  }
-  
-  .table-placeholder {
-    width: 100%;
-    height: 400px;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-  }
+}

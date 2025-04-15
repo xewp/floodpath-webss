@@ -92,4 +92,70 @@
       grid-column: span 1;
     }
   }
+  /* Overview Page Transitions */
+.overview-container {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overview-container.overview-enter-active {
+  opacity: 1;
+}
+
+.overview-header {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.overview-header.header-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dashboard-card {
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  transition: all 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-card.card-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Different transition for wide cards */
+.dashboard-card.wide {
+  transform: scale(0.95) translateX(20px);
+}
+
+.dashboard-card.wide.card-enter-active {
+  transform: scale(1) translateX(0);
+}
+
+/* Area alert card special effect */
+.dashboard-card.area-alert {
+  transform: scale(0.95) rotate(-2deg);
+}
+
+.dashboard-card.area-alert.card-enter-active {
+  transform: scale(1) rotate(0deg);
+}
+
+/* Hover effects */
+.dashboard-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.dashboard-card.wide:hover {
+  transform: translateY(-5px) scale(1.01);
+}
+
+.dashboard-card.area-alert:hover {
+  transform: translateY(-5px) rotate(0deg) scale(1.02);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.1);
+}
   

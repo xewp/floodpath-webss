@@ -1,18 +1,24 @@
 // src/pages/Dashboard/WeatherRainfall.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Weather.css';
 import WeatherRainfallChart from '../../components/Charts/WeatherRainfallChart';
-import ApiChart from '../../components/Charts/ApiChart'; // Import the new component
+import ApiChart from '../../components/Charts/ApiChart';
 import ChanceOfRainChart from '../../components/Charts/ChanceOfRainChart';
 import RaindropTrackChart from '../../components/Charts/RaindropTrackChart';
 
-
-
 const WeatherRainfall = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // Trigger the transition after component mounts
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
+
   return (
-    <div className="weather-page">
+    <div className={`weather-page ${isMounted ? 'page-enter-active' : 'page-enter'}`}>
       {/* Weather Stats Section - Labels Only */}
-      <div className="weather-stats-row">
+      <div className={`weather-stats-row ${isMounted ? 'stats-enter-active' : 'stats-enter'}`}>
         <div className="weather-stat-box">
           <h4 className="stat-label">Wind speed</h4>
           <div className="empty-value"></div>
@@ -36,16 +42,15 @@ const WeatherRainfall = () => {
       </div>
 
       {/* Main Content Sections */}
-      <div className="weather-content-grid">
+      <div className={`weather-content-grid ${isMounted ? 'content-enter-active' : 'content-enter'}`}>
         {/* API Chart - NEW */}
         <div className="content-box api-box">
           <ApiChart />
         </div>
         
         {/* Change of Rain */}
-         <div className="content-box">
-          
-          <div className="rain-chance-container h-64"> {/* Fixed height */}
+        <div className="content-box">
+          <div className="rain-chance-container h-64">
             <ChanceOfRainChart />
           </div>
         </div>
@@ -61,7 +66,7 @@ const WeatherRainfall = () => {
         {/* Predictive Analytics */}
         <div className="content-box">
           <h3 className="section-title">Weather and Rainfall Predictive Analytics</h3>
-          <div className="analytics-chart-container h-64"> {/* Fixed height */}
+          <div className="analytics-chart-container h-64">
             <WeatherRainfallChart />
           </div>
         </div>

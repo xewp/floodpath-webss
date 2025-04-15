@@ -9,8 +9,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<AdminLanding />} /> {/* Changed default */}
-        <Route path="/admin" element={<AdminLanding />} /> {/* Moved admin to /admin */}
+
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/user-landing" element={<UserLanding />} /> {/* Define the route for UserLanding */}
       </Routes>
     </Router>
   );

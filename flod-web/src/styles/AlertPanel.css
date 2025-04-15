@@ -4,6 +4,9 @@
   grid-template-rows: auto auto;
   gap: 20px;
   padding: 20px;
+  /* Add a subtle fade-in transition for the entire page */
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
 
 /* Box styling */
@@ -14,6 +17,12 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  /* Add a subtle transition for box-shadow on hover */
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.alert-box:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Positioning for each box */
@@ -41,12 +50,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* Add a subtle transition for background-color */
+  transition: background-color 0.15s ease-in-out;
+}
+
+.box-header:hover {
+  background-color: #f0f0f0;
 }
 
 .box-header h3 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
+  /* Add a subtle transition for color */
+  transition: color 0.15s ease-in-out;
+}
+
+.box-header:hover h3 {
+  color: #337ab7; /* Example hover color */
 }
 
 /* Controls for search and sort */
@@ -60,6 +81,14 @@
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  /* Add a subtle transition for border-color on focus */
+  transition: border-color 0.15s ease-in-out;
+}
+
+.box-controls input:focus,
+.box-controls select:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 /* Inner content area */
@@ -67,6 +96,12 @@
   flex: 1;
   padding: 20px;
   min-height: 180px;
+  /* Add a subtle transition for background-color */
+  transition: background-color 0.1s ease-in-out;
+}
+
+.box-content:hover {
+  background-color: #fefefe;
 }
 
 /* Responsive adjustments */
@@ -80,5 +115,15 @@
   #evacuations-capacity-box,
   #all-users-box {
     grid-column: span 1;
+  }
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

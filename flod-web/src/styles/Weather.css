@@ -145,3 +145,46 @@
     grid-template-columns: 1fr;
   }
 }
+/* Transition styles */
+.weather-page {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.weather-page.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.weather-stats-row {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+}
+
+.weather-stats-row.stats-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.weather-content-grid {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+}
+
+.weather-content-grid.content-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Individual content boxes can have their own transitions */
+.content-box {
+  transition: all 0.3s ease;
+}
+
+.content-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

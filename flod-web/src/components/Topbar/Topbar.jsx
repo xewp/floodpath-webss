@@ -1,4 +1,3 @@
-// src/components/TopBar/TopBar.jsx
 import React from 'react';
 import '../../styles/TopBar.css';
 
@@ -13,5 +12,4 @@ const TopBar = ({ userType = "admin" }) => {  // Default to "admin"
     );
   };
   
-
 export default TopBar;

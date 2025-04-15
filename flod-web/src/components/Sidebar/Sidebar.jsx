@@ -1,13 +1,22 @@
 // src/components/Sidebar/Sidebar.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/Sidebar.css';
 
 const Sidebar = ({ activeItem, onItemClick }) => {
-  return (
-    <nav className="sidebar">
-     <div class="logo">FloodPath</div>
+  const [isMounted, setIsMounted] = useState(false);
+  const navigate = useNavigate();
 
-      <div className="nav-section">
+  useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
+
+  return (
+    <nav className={`sidebar ${isMounted ? 'sidebar-enter-active' : 'sidebar-enter'}`}>
+      <div className={`logo ${isMounted ? 'logo-enter-active' : 'logo-enter'}`}>FloodPath</div>
+
+      <div className={`nav-section ${isMounted ? 'section-enter-active' : 'section-enter'}`} style={{ transitionDelay: '0.1s' }}>
         <div className="section-title">Dashboard</div>
         <ul className="sub-menu">
           <li
@@ -25,7 +34,7 @@ const Sidebar = ({ activeItem, onItemClick }) => {
         </ul>
       </div>
 
-      <div className="nav-section">
+      <div className={`nav-section ${isMounted ? 'section-enter-active' : 'section-enter'}`} style={{ transitionDelay: '0.2s' }}>
         <div className="section-title">User Management</div>
         <ul className="sub-menu">
           <li
@@ -43,7 +52,7 @@ const Sidebar = ({ activeItem, onItemClick }) => {
         </ul>
       </div>
 
-      <div className="nav-section">
+      <div className={`nav-section ${isMounted ? 'section-enter-active' : 'section-enter'}`} style={{ transitionDelay: '0.3s' }}>
         <div className="section-title">System Configuration</div>
         <ul className="sub-menu">
           <li
@@ -73,7 +82,7 @@ const Sidebar = ({ activeItem, onItemClick }) => {
         </ul>
       </div>
 
-      <div className="nav-section">
+      <div className={`nav-section ${isMounted ? 'section-enter-active' : 'section-enter'}`} style={{ transitionDelay: '0.4s' }}>
         <div className="section-title">Admin Control</div>
         <ul className="sub-menu">
           <li
@@ -85,8 +94,8 @@ const Sidebar = ({ activeItem, onItemClick }) => {
         </ul>
       </div>
 
-      <div className="logout">
-        <button onClick={() => console.log('Logout clicked')}>
+      <div className={`logout ${isMounted ? 'logout-enter-active' : 'logout-enter'}`} style={{ transitionDelay: '0.5s' }}>
+      <button onClick={() => navigate('/user-landing')}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
