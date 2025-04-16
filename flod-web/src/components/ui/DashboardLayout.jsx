@@ -1,17 +1,17 @@
 // src/pages/DashboardLayout.jsx
 import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar/Sidebar';
-import SearchBar from '../components/SearchBar/SearchBar';
-import Overview from '../pages/Dashboard/Overview';
-import Users from '../pages/Dashboard/Users';
-import Groups from '../pages/Dashboard/Groups';
-import SupportChat from '../pages/Dashboard/SupportChat';
-import AuditLogs from '../pages/Dashboard/AuditLogs'; // Import the AuditLogs component
-import '../styles/DashboardLayout.css';
-import Announcements from '../pages/Dashboard/Announcements';
-import AlertsPanel from '../pages/Dashboard/Alerts';
+import Sidebar from '../Sidebar/Sidebar';
+import SearchBar from '../SearchBar/SearchBar';
+import Overview from '../../pages/Dashboard/Overview';
+import Users from '../../pages/UserManagement/Users';
+import Groups from '../../pages/UserManagement/Groups';
+import SupportChat from '../../pages/SystemConfiguration/SupportChat';
+import AuditLogs from '../../pages/AdminControl/AuditLogs'; // Import the AuditLogs component
+import '../../styles/components/ui/DashboardLayout.css';
+import Announcements from '../../pages/SystemConfiguration/Announcements';
+import AlertsPanel from '../../pages/SystemConfiguration/Alerts';
 // In your imports
-import WeatherRainfall from '../pages/Dashboard/Weather';
+import WeatherRainfall from '../../pages/SystemConfiguration/Weather';
 
 
 

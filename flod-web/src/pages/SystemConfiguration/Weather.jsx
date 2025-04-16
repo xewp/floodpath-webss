@@ -1,6 +1,6 @@
 // src/pages/Dashboard/WeatherRainfall.jsx
 import React, { useEffect, useState } from 'react';
-import '../../styles/Weather.css';
+import '../../styles/pages/SystemConfiguration/Weather.css';
 import WeatherRainfallChart from '../../components/Charts/WeatherRainfallChart';
 import ApiChart from '../../components/Charts/ApiChart';
 import ChanceOfRainChart from '../../components/Charts/ChanceOfRainChart';

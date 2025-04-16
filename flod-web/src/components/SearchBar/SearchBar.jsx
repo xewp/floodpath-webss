@@ -1,6 +1,6 @@
 // src/components/SearchBar/SearchBar.jsx
 import React from 'react';
-import '../../styles/SearchBar.css';
+import '../../styles/components/SearchBar/SearchBar.css';
 
 
 const SearchBar = ({ user = { name: 'Giyu', role: 'Admin' } }) => {

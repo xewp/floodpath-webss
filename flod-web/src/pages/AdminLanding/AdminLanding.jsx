@@ -2,7 +2,7 @@
 import React from 'react';
 import TopBar from '../../components/Topbar/Topbar';
 import LoginForm from '../../components/LoginForm/LoginForm';
-import '../../styles/AdminLanding.css';
+import '../../styles/pages/AdminLanding/AdminLanding.css';
 
 const AdminLanding = () => {
   return (

@@ -1,23 +1,16 @@
-// src/pages/Dashboard/AuditLogs.jsx
+// src/pages/Dashboard/SupportChat.jsx
 import React from 'react';
-import { motion } from 'framer-motion';
-import '../../styles/AuditLogs.css';
+import '../../styles/pages/SystemConfiguration/SupportChat.css';
 
-const AuditLogs = () => {
+const SupportChat = () => {
   return (
-    <motion.div
-      className="audit-logs-page"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      <div className="audit-table-container">
+    <div className="support-chat-page">
+      <div className="support-table-container">
         <div className="table-header">
-          <h2>Audit Logs</h2>
+          <h2>Support Request</h2>
           <div className="table-controls">
             <div className="search-control">
-              <input type="text" placeholder="Search logs..." />
+              <input type="text" placeholder="Search requests..." />
               <button className="search-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="11" cy="11" r="8"></circle>
@@ -25,31 +18,26 @@ const AuditLogs = () => {
                 </svg>
               </button>
             </div>
-            <div className="filter-control">
-              <select>
-                <option value="">Filter by</option>
-                <option value="user">User</option>
-                <option value="date">Date</option>
-                <option value="action">Action</option>
-              </select>
-            </div>
           </div>
         </div>
 
         <div className="table-wrapper">
-          <table className="audit-table">
+          <table className="support-table">
             <thead>
               <tr>
-                <th>Logs</th>
-                <th>Date</th>
+                <th>Requester Name</th>
+                <th>Select Admin Support</th>
+                <th>Location</th>
+                <th>Requested in</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
+              {/* Empty state - will fill full height */}
               <tr className="empty-state">
-                <td colSpan="3">
+                <td colSpan="5">
                   <div className="empty-message">
-                    No audit logs available
+                    No support requests available
                   </div>
                 </td>
               </tr>
@@ -58,11 +46,11 @@ const AuditLogs = () => {
         </div>
 
         <div className="table-footer">
-          <span>Showing data 0 to 0 of 0 entries</span>
+          <span>Showing request 0 to 0 of 0 entries</span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
-export default AuditLogs;
+export default SupportChat;

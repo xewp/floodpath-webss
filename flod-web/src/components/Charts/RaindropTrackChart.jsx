@@ -1,7 +1,7 @@
 // src/components/Charts/RaindropTrackChart.jsx
 import React from 'react';
 import Chart from 'react-apexcharts';
-import '../../styles/RaindropTrackChart.css'; // Import the CSS file
+import '../../styles/components/Charts/RaindropTrackChart.css'; // Import the CSS file
 
 const RaindropTrackChart = () => {
   const chartData = {

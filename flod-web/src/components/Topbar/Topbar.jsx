@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/TopBar.css';
+import '../../styles/components/Topbar/TopBar.css';
 
 const TopBar = ({ userType = "admin" }) => {  // Default to "admin"
     return (

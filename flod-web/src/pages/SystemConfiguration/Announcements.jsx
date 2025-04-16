@@ -1,8 +1,6 @@
 import React from 'react';
-import '../../styles/Announcements.css';
+import '../../styles/pages/SystemConfiguration/Announcements.css';
 import EvacuationCapacityChart from '../../components/Charts/EvacuationChart';
-
-// Changed from EvacChart to EvacuationChart
 
 const Announcements = () => {
   return (
@@ -12,16 +10,17 @@ const Announcements = () => {
         <div className="box-header">
           <h3>Weather Heat Map</h3>
         </div>
-        <div className="box-content" />
+        <div className="box-content">
+          {/* Weather map content */}
+        </div>
       </div>
 
       <div className="announcement-box" id="evacuation-capacity-box">
         <div className="box-header">
           <h3>Evacuations Capacity</h3>
-          <EvacuationCapacityChart />
         </div>
         <div className="box-content">
-          
+          <EvacuationCapacityChart />
         </div>
       </div>
 
@@ -29,7 +28,9 @@ const Announcements = () => {
         <div className="box-header">
           <h3>Latest News</h3>
         </div>
-        <div className="box-content" />
+        <div className="box-content">
+          {/* Latest news content */}
+        </div>
       </div>
 
       {/* Bottom Row */}
@@ -40,7 +41,9 @@ const Announcements = () => {
             <input type="text" placeholder="Search..." />
           </div>
         </div>
-        <div className="box-content" />
+        <div className="box-content">
+          {/* Barangays list content */}
+        </div>
       </div>
 
       <div className="announcement-box" id="announcements-list-box">
@@ -51,7 +54,9 @@ const Announcements = () => {
             <button>Create</button>
           </div>
         </div>
-        <div className="box-content" />
+        <div className="box-content">
+          {/* Announcements list content */}
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Users.css';
+import '../../styles/pages/UserManagement/Users.css';
 import MajorityUserChart from '../../components/Charts/MajorityUserChart';
 
 const Users = () => {
@@ -7,10 +7,12 @@ const Users = () => {
     <div className="users-container">
       {/* First Row - Three Boxes */}
       <div className="users-row">
-        {/* Majority User Box */}
-        <div className="dashboard-card wide">
-          <h3>Majority User</h3>
-          <div className="card-content h-64">
+        {/* New Majority User Box (Left of Heat Map) */}
+        <div className="users-box" id="majority-users-separate-box">
+          <div className="box-header">
+            <h3>Majority User</h3>
+          </div>
+          <div className="box-content">
             <MajorityUserChart />
           </div>
         </div>

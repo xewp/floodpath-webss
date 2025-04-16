@@ -1,7 +1,7 @@
 // src/components/Sidebar/Sidebar.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/Sidebar.css';
+import '../../styles/components/Sidebar/Sidebar.css';
 
 const Sidebar = ({ activeItem, onItemClick }) => {
   const [isMounted, setIsMounted] = useState(false);

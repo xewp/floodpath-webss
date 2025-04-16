@@ -13,34 +13,41 @@ const EvacuationChart = () => {
     options: {
       chart: {
         type: 'bar',
-        height: '100%', // This will make it fit the container
+        height: '100%',
         toolbar: {
           show: false
         },
         animations: {
-          enabled: false // Disable animations for better performance
+          enabled: false
         }
       },
       plotOptions: {
         bar: {
-          horizontal: false, // Vertical bars
-          columnWidth: '30%', // Make bars thinner
+          horizontal: false,
+          columnWidth: '30%',
           distributed: true,
-          borderRadius: 8, // Add border radius for rounded edges
+          borderRadius: 8,
           dataLabels: {
             position: 'top'
           }
         }
       },
-      colors: ['#EF4444', '#F59E0B', '#10B981', '#10B981', '#EF4444', '#F59E0B'], // Direct color mapping
+      colors: ['#EF4444', '#F59E0B', '#10B981', '#10B981', '#EF4444', '#F59E0B'],
       dataLabels: {
         enabled: true,
-        formatter: function(val) {
-          return val + "%";
+        formatter: function(value, { seriesIndex, dataPointIndex, w }) {
+          const percentage = w.config.series[seriesIndex].data[dataPointIndex];
+          if (percentage >= 100) {
+            return 'Full';
+          } else if (percentage >= 80) {
+            return 'Near Cap';
+          } else {
+            return 'Available';
+          }
         },
-        offsetY: -20, // Position above the bar
+        offsetY: -20,
         style: {
-          fontSize: '10px', // Smaller font
+          fontSize: '10px',
           colors: ["#000"]
         }
       },
@@ -55,9 +62,9 @@ const EvacuationChart = () => {
         ],
         labels: {
           style: {
-            fontSize: '10px', // Smaller font for x-axis
+            fontSize: '10px',
           },
-          trim: true // Trim long labels
+          trim: true
         },
         axisTicks: {
           show: false
@@ -65,20 +72,24 @@ const EvacuationChart = () => {
       },
       yaxis: {
         max: 100,
+        tickAmount: 2, // Only show 2 ticks (top and bottom)
         labels: {
           style: {
             fontSize: '10px'
           },
           formatter: function(val) {
-            return val + "%";
+            if (val === 100) return 'Full';
+            if (val === 50) return 'Near Capacity';
+            if (val === 0) return 'Available';
+            return '';
           }
         }
       },
       grid: {
-        show: false // Remove grid lines for cleaner look
+        show: false
       },
       tooltip: {
-        enabled: false // Disable tooltips for compact view
+        enabled: false
       },
       legend: {
         show: false
@@ -86,33 +97,16 @@ const EvacuationChart = () => {
     }
   };
 
-  // Compact legend
-  const Legend = () => (
-    <div className="flex justify-center space-x-3 mb-2">
-      <div className="flex items-center">
-        <div className="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
-        <span className="text-xs">Full</span>
-      </div>
-      <div className="flex items-center">
-        <div className="w-2 h-2 bg-yellow-500 rounded-full mr-1"></div>
-        <span className="text-xs">Near Cap</span>
-      </div>
-      <div className="flex items-center">
-        <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-        <span className="text-xs">Available</span>
-      </div>
-    </div>
-  );
-
   return (
     <div className="h-full p-1">
-      <Legend />
-      <Chart
-        options={chartData.options}
-        series={chartData.series}
-        type="bar"
-        height="100%"
-      />
+      <div className="h-full">
+        <Chart
+          options={chartData.options}
+          series={chartData.series}
+          type="bar"
+          height="100%"
+        />
+      </div>
     </div>
   );
 };

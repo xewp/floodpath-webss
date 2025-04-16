@@ -41,14 +41,13 @@
 }
 
 #user-heatmap-box {
-  flex: 1.5;
+  flex: 1;
   transition: all 0.4s ease;
 }
 
 #new-users-box {
-  flex: 1;
+  flex: 0.55; /* Make it 75% the width of a box with flex: 1 */
 }
-
 #all-users-box {
   width: 100%;
   transition: all 0.4s ease;

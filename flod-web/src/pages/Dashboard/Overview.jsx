@@ -1,6 +1,6 @@
 // src/pages/Dashboard/Overview.jsx
 import React, { useEffect, useState } from 'react';
-import '../../styles/Overview.css';
+import '../../styles/pages/Dashboard/Overview.css';
 import EvacuationChart from '../../components/Charts/EvacuationChart';
 import MajorityUserChart from '../../components/Charts/MajorityUserChart';
 
@@ -79,21 +79,21 @@ const Overview = () => {
         
         {/* Box 10 */}
         <div className={`dashboard-card ${isMounted ? 'card-enter-active' : 'card-enter'}`} style={{ transitionDelay: '1.0s' }}>
-          <h3>Real-time Sensor Data</h3>
-          <div className="card-content"></div>
-        </div>
-        
-        {/* Box 11 */}
-        <div className={`dashboard-card ${isMounted ? 'card-enter-active' : 'card-enter'}`} style={{ transitionDelay: '1.1s' }}>
-          <h3>Weather Forecast</h3>
-          <div className="card-content"></div>
-        </div>
-        
-        {/* Box 12 */}
-        <div className={`dashboard-card ${isMounted ? 'card-enter-active' : 'card-enter'}`} style={{ transitionDelay: '1.2s' }}>
-          <h3>Emergency Services Availability</h3>
-          <div className="card-content"></div>
-        </div>
+  <h3>Real-time Sensor Data</h3>
+  <div className="card-content"></div>
+</div>
+
+{/* Box 11 - Weather Forecast (last row) */}
+<div className={`dashboard-card ${isMounted ? 'card-enter-active' : 'card-enter'}`} style={{ transitionDelay: '1.1s' }}>
+  <h3>Weather Forecast</h3>
+  <div className="card-content"></div>
+</div>
+
+{/* Box 12 - Emergency Services Availability (last row) */}
+<div className={`dashboard-card ${isMounted ? 'card-enter-active' : 'card-enter'}`} style={{ transitionDelay: '1.2s' }}>
+  <h3>Emergency Services Availability</h3>
+  <div className="card-content"></div>
+</div>
       </div>
     </div>
   );

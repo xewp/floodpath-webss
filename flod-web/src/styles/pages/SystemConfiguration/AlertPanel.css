@@ -4,6 +4,7 @@
   grid-template-rows: auto auto;
   gap: 20px;
   padding: 20px;
+   grid-template-columns: 1fr 0.5fr 1fr;
   /* Add a subtle fade-in transition for the entire page */
   opacity: 0;
   animation: fadeIn 0.3s ease-in-out forwards;
@@ -40,6 +41,12 @@
 
 #all-users-box {
   grid-column: span 3;
+  height: 500px; /* 🔧 Set your desired height here */
+}
+
+#weather-heatmap-box {
+  grid-column: span 1;
+  height: 280px; /* 🔧 Adjust this as needed */
 }
 
 /* Header styling */

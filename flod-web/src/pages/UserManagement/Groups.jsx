@@ -1,6 +1,6 @@
 // src/pages/Dashboard/Groups.jsx
 import React from 'react';
-import '../../styles/Groups.css';
+import '../../styles/pages/UserManagement/Groups.css';
 
 const Groups = () => {
   return (

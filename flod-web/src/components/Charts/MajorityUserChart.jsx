@@ -58,18 +58,7 @@ const MajorityUserChart = () => {
           expandOnClick: false
         }
       },
-      title: {
-        text: 'Majority User',
-        align: 'left',
-        style: {
-          fontSize: '16px',
-          fontWeight: 'bold',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
-          color: '#000000'
-        },
-        offsetY: 10,
-        offsetX: 10
-      },
+
       responsive: [{
         breakpoint: 480,
         options: {

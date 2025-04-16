@@ -1,7 +1,7 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminLanding from './pages/AdminLanding/AdminLanding';
-import DashboardPage from './pages/DashboardLayout';
+import DashboardPage from './components/ui/DashboardLayout';
 import UserLanding from './pages/UserLanding/UserLanding';
 
 function App() {
