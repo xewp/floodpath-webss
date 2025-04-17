@@ -187,4 +187,84 @@
 .content-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}.windspeed-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  padding: 10px 0;
+}
+
+.windspeed-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.wind-icon {
+  color: #007bff;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-top: 15px; /* moves icon down */
+}
+
+
+.windspeed-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.windspeed-title {
+  font-size: 21px; /* originally 16px + ~5px */
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.wind-speed {
+  font-size: 19px; /* originally 14px + ~5px */
+  font-weight: 500;
+  color: #444;
+}
+
+.windspeed-right {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wind-gust,
+.wind-direction {
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+}
+/* src/styles/WeatherRainfall.css */
+.raindrop-container {
+  /* Other existing styles */
+  height: 450px; /* Set your desired height */
+}
+
+.analytics-chart-container {
+  /* Other existing styles */
+  height: 50px; /* Set your desired height */
+}
+.h-full {
+  height: 100%;
+}.content-box:nth-child(4) { /* Target the analytics box (adjust if needed) */
+  flex-grow: 1;
+  display: flex; /* To make the inner container stretch */
+  flex-direction: column;
+}
+
+.analytics-chart-container {
+  height: 450px; /* Or height: 100% if the content-box grows */
+  flex-grow: 1; /* Make it grow within the content-box */
 }

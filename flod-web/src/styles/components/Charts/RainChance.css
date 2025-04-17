@@ -1,0 +1,51 @@
+.rainchance-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 12px;
+  }
+  
+  .rainchance-icon {
+    background: linear-gradient(135deg, #7f8fa6, #dcdde1);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(2px); /* Move logo down by 2px */
+  }
+  
+  .rainchance-details {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    margin-left: -120px;
+  }
+  
+  .rainchance-title {
+    font-size: 17px; /* a bit smaller by 3px */
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .rainchance-value {
+    font-size: 22px; /* a bit smaller by 3px */
+    font-weight: 500;
+    margin: 4px 0 0 0;
+  }
+  
+  .rainchance-change {
+    display: flex;
+    align-items: center;
+    font-size: 17px; /* smaller */
+    font-weight: 600;
+    color: green;
+    gap: 4px;
+  }
+  
+  .rainchance-arrow {
+    font-size: 17px;
+  }
+  

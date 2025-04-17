@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/pages/UserManagement/Users.css';
 import MajorityUserChart from '../../components/Charts/MajorityUserChart';
+import NewCreateUsers from '../../components/Charts/NewCreateUsers';
 
 const Users = () => {
   return (
@@ -29,13 +30,10 @@ const Users = () => {
 
         {/* New Create Users Box */}
         <div className="users-box" id="new-users-box">
-          <div className="box-header">
-            <h3>New Create Users</h3>
-          </div>
-          <div className="box-content">
-            {/* Content will go here */}
-          </div>
-        </div>
+  <div className="box-content">
+    <NewCreateUsers />
+  </div>
+</div>
       </div>
 
       {/* All Users Table Box */}

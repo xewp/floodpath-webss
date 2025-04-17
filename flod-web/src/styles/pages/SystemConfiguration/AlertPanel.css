@@ -17,6 +17,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
+  height: 350px;
+
   overflow: hidden;
   /* Add a subtle transition for box-shadow on hover */
   transition: box-shadow 0.2s ease-in-out;
@@ -29,6 +31,7 @@
 /* Positioning for each box */
 #weather-heatmap-box {
   grid-column: span 1;
+  
 }
 
 #area-alert-level-box {
@@ -46,7 +49,7 @@
 
 #weather-heatmap-box {
   grid-column: span 1;
-  height: 280px; /* 🔧 Adjust this as needed */
+  height: 350px;
 }
 
 /* Header styling */
@@ -121,6 +124,7 @@
   #area-alert-level-box,
   #evacuations-capacity-box,
   #all-users-box {
+    
     grid-column: span 1;
   }
 }
@@ -133,4 +137,30 @@
   to {
     opacity: 1;
   }
+}/* Add to AlertPanel.css */
+#area-alert-level-box .box-content.compact-view {
+  padding: 8px;
+  height: calc(100% - 16px); /* Adjust based on your box-header height */
+}
+
+#area-alert-level-box .area-alert-container {
+  height: 100%;
+  padding: 0;
+}
+
+#area-alert-level-box .area-list {
+  gap: 35px; /* Reduced gap between items */
+}
+
+#area-alert-level-box .area-item {
+  gap: 8px; /* Reduced gap between name and bar */
+}
+
+#area-alert-level-box .area-name {
+  min-width: 100px; /* Reduced minimum width */
+  font-size: 13px; /* Slightly smaller font */
+}
+
+#area-alert-level-box .thin-bar {
+  height: 3px; /* Thinner bars */
 }

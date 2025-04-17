@@ -180,4 +180,18 @@
   .search-control input {
       flex-grow: 1;
   }
+}/* Add to Users.css */
+#majority-users-separate-box {
+  overflow: hidden; /* This prevents scrollbars */
+}
+
+#majority-users-separate-box .box-content {
+  width: 100%;
+  overflow: hidden; /* Ensures chart doesn't cause overflow */
+}
+
+/* If using Chart.js, add this to prevent canvas overflow */
+#majority-users-separate-box canvas {
+  max-width: 100%;
+  height: auto !important;
 }

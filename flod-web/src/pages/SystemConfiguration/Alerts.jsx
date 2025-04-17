@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../styles/pages/SystemConfiguration/AlertPanel.css';
 import EvacuationCapacityChart from '../../components/Charts/EvacuationChart';
-
-
+import AreaAlertLevel from '../../components/Charts/AreaAlertLevel';
 
 const AlertPanel = () => {
   return (
@@ -17,13 +16,10 @@ const AlertPanel = () => {
         </div>
       </div>
 
-      {/* Area Alert Level Box */}
+      {/* Area Alert Level Box - Modified to fit content */}
       <div className="alert-box" id="area-alert-level-box">
-        <div className="box-header">
-          <h3>Area Alert Level</h3>
-        </div>
-        <div className="box-content">
-          {/* Content Placeholder */}
+        <div className="box-content compact-view">
+          <AreaAlertLevel />
         </div>
       </div>
 
@@ -33,7 +29,7 @@ const AlertPanel = () => {
           <h3>Evacuations Capacity</h3>
         </div>
         <div className="box-content">
-        <EvacuationCapacityChart />
+          <EvacuationCapacityChart />
         </div>
       </div>
 

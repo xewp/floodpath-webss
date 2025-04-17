@@ -5,6 +5,13 @@ import WeatherRainfallChart from '../../components/Charts/WeatherRainfallChart';
 import ApiChart from '../../components/Charts/ApiChart';
 import ChanceOfRainChart from '../../components/Charts/ChanceOfRainChart';
 import RaindropTrackChart from '../../components/Charts/RaindropTrackChart';
+import WindSpeed from '../../components/Charts/windspeed';
+import Pressure from '../../components/Charts/Pressure';
+import RainChance from '../../components/Charts/RainChance'; // Import this at the top!
+import UvIndex from '../../components/Charts/UvIndex'; // Import this at the top!
+
+
+
 
 const WeatherRainfall = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -20,24 +27,17 @@ const WeatherRainfall = () => {
       {/* Weather Stats Section - Labels Only */}
       <div className={`weather-stats-row ${isMounted ? 'stats-enter-active' : 'stats-enter'}`}>
         <div className="weather-stat-box">
-          <h4 className="stat-label">Wind speed</h4>
-          <div className="empty-value"></div>
-          <div className="empty-change"></div>
+          <WindSpeed />
         </div>
         <div className="weather-stat-box">
-          <h4 className="stat-label">Pressure</h4>
-          <div className="empty-value"></div>
-          <div className="empty-change"></div>
-        </div>
-        <div className="weather-stat-box">
-          <h4 className="stat-label">Rain chance</h4>
-          <div className="empty-value"></div>
-          <div className="empty-change"></div>
-        </div>
-        <div className="weather-stat-box">
-          <h4 className="stat-label">UV Index</h4>
-          <div className="empty-value"></div>
-          <div className="empty-change"></div>
+  <Pressure />
+</div>
+        {/* Inside your WeatherRainfall return */}
+<div className="weather-stat-box">
+  <RainChance />
+</div>
+<div className="weather-stat-box">
+          <UvIndex /> {/* Use the UVIndex component here */}
         </div>
       </div>
 
@@ -57,7 +57,6 @@ const WeatherRainfall = () => {
 
         {/* Raindrop Track */}
         <div className="content-box">
-          <h3 className="section-title">Raindrop Track</h3>
           <div className="raindrop-container h-64">
             <RaindropTrackChart />
           </div>

@@ -93,14 +93,14 @@ const WeatherRainfallChart = () => {
   };
 
   return (
-    <div className="h-full">
-      <Chart
-        options={chartData.options}
-        series={chartData.series}
-        type="area"
-        height="100%"
-      />
-    </div>
+<div className="h-full">
+  <Chart
+    options={chartData.options}
+    series={chartData.series}
+    type="area"
+    height="100%"
+  />
+</div>
   );
 };
 

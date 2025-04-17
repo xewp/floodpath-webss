@@ -1,47 +1,16 @@
-.announcements-page {
+/* Renamed to announcements-grid-page to make it unique */
+.announcements-grid-page {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-  grid-template-rows: 300px 500px; /* Matching image heights */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 300px 500px;
   gap: 15px;
   padding: 15px;
   opacity: 0;
   animation: fadeIn 0.3s ease-in-out forwards;
 }
 
-/* Top row boxes - each in its own column */
-#weather-heatmap-box {
-  grid-column: 1;
-  grid-row: 1;
-  height: 350px;
-}
-
-#evacuation-capacity-box {
-  grid-column: 2;
-  grid-row: 1;
-  height: 300px;
-}
-
-#latest-news-box {
-  grid-column: 3;
-  grid-row: 1;
-  height: 300px;
-}
-
-/* Bottom row boxes */
-#barangays-list-box {
-  grid-column: 1 / span 2; /* Spans columns 1 and 2 */
-  grid-row: 2;
-  height: 500px;
-}
-
-#announcements-list-box {
-  grid-column: 3;
-  grid-row: 2;
-  height: 500px;
-}
-
-/* Shared box styling */
-.announcement-box {
+/* Updated all selectors to use the new prefix */
+.announcements-grid-box {
   background: white;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -49,88 +18,10 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
-
-.box-header {
-  padding: 8px 12px;
-  background: #f5f5f5;
-  border-bottom: 1px solid #e0e0e0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.box-header h3 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
-}
-
-.box-controls {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.box-controls input {
-  padding: 4px 8px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  font-size: 12px;
-  width: 120px;
-}
-
-.box-controls button {
-  padding: 4px 8px;
-  background: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.box-content {
-  flex: 1;
-  padding: 10px;
-  overflow: auto;
-}
-
-/* Table styling to match image */
-.box-content table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-}
-
-.box-content th, 
-.box-content td {
-  padding: 8px 12px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-}
-
-.box-content th {
-  background-color: #f9f9f9;
-  font-weight: 500;
-}
-
-.box-content select {
-  padding: 3px 6px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  font-size: 12px;
-}
-
-/* Add blue border to match image */
-.announcement-box {
-  border: 1px solid #d9e8f3;
   position: relative;
 }
 
-/* Add dotted blue border effect */
-.announcement-box::before {
+.announcements-grid-box::before {
   content: '';
   position: absolute;
   top: -4px;
@@ -142,34 +33,86 @@
   pointer-events: none;
 }
 
-/* Pagination styling */
-.box-footer {
+/* Specific box positioning */
+#announcements-weather-box {
+  grid-column: 1;
+  grid-row: 1;
+  height: 295px;
+}
+
+#announcements-evacuation-box {
+  grid-column: 2;
+  grid-row: 1;
+  height: 300px;
+}
+
+#announcements-news-box {
+  grid-column: 3;
+  grid-row: 1;
+  height: 300px;
+}
+
+#announcements-barangays-box {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  height: 500px;
+}
+
+#announcements-list-box {
+  grid-column: 3;
+  grid-row: 2;
+  height: 500px;
+}
+
+/* Header styles */
+.announcements-box-header {
   padding: 8px 12px;
-  border-top: 1px solid #eee;
-  font-size: 12px;
-  color: #666;
+  background: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.announcements-box-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.announcements-box-controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.announcements-box-content {
+  flex: 1;
+  padding: 10px;
+  overflow: auto;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
-  .announcements-page {
+  .announcements-grid-page {
     grid-template-columns: 1fr 1fr;
   }
   
-  #weather-heatmap-box {
+  #announcements-weather-box {
     grid-column: 1;
   }
   
-  #evacuation-capacity-box {
+  #announcements-evacuation-box {
     grid-column: 2;
   }
   
-  #latest-news-box {
+  #announcements-news-box {
     grid-column: 1 / span 2;
     grid-row: 2;
   }
   
-  #barangays-list-box {
+  #announcements-barangays-box {
     grid-column: 1;
     grid-row: 3;
   }
@@ -181,14 +124,14 @@
 }
 
 @media (max-width: 768px) {
-  .announcements-page {
+  .announcements-grid-page {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
   
-  #evacuation-capacity-box,
-  #latest-news-box,
-  #barangays-list-box,
+  #announcements-evacuation-box,
+  #announcements-news-box,
+  #announcements-barangays-box,
   #announcements-list-box {
     grid-column: 1;
     width: 100%;
@@ -196,38 +139,33 @@
   }
 }
 
-@keyframes fadeIn {
+@keyframes announcements-fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-/* Add these specific styles for the evacuation capacity chart container */
-#evacuation-capacity-box .box-content {
+
+/* Chart-specific adjustments */
+#announcements-evacuation-box .announcements-box-content {
   padding: 0;
-  height: auto; /* Let the content determine the height */
-  min-height: 250px; /* Provide adequate height for the chart */
+  height: auto;
+  min-height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible; /* Allow the chart to display without clipping */
+  overflow: visible;
 }
 
-/* If needed, add additional space for the rotated labels */
-#evacuation-capacity-box {
-  height: auto; /* Let content and padding determine height */
-  min-height: 200px; /* Increase minimum height of the box */
+#announcements-evacuation-box {
+  height: auto;
+  min-height: 200px;
 }
 
-/* Add some bottom padding to accommodate the rotated labels */
-#evacuation-capacity-box .box-content {
-  padding: 10px; /* Add some padding around the chart */
-  height: auto; /* Let the content determine the height */
-  min-height: 320px; /* Increase the minimum height to provide more space */
+#announcements-evacuation-box .announcements-box-content {
+  padding: 10px;
+  height: auto;
+  min-height: 320px;
   display: flex;
-  align-items: center; /* Vertically center the chart */
-  justify-content: center; /* Horizontally center the chart */
-  overflow: visible; /* Allow chart elements to be visible */
-}
-#evacuation-capacity-box .box-content > div {
-  width: 100%;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
 }
